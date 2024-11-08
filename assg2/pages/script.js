@@ -83,17 +83,48 @@ if (categories[categoryName]) {
             const popup = document.createElement('div');
             popup.id = 'gamePopup'; // Apply the popup ID from CSS
             popup.className = 'popup'; // Apply the popup class
-            popup.innerHTML = `
-                <div class="popup-content">
-                    <h2>${result === 'win' ? 'Congratulations, you won!' : 'You lose! The word was: ' + word}</h2>
-                    <button onclick="quitGame()">Quit Game</button>
-                    <button onclick="changeCategory()">Change Category</button>
-                    <button onclick="replayGame()">Replay</button>
-                </div>
-            `;
+        
+            // Create the popup content
+            const popupContent = document.createElement('div');
+            popupContent.className = 'popup-content';
+        
+            // Add the message (win or lose)
+            const message = document.createElement('h2');
+            message.innerHTML = result === 'win' ? 'YOU WIN !' : 'YOU LOSE!';
+            popupContent.appendChild(message);
+        
+            // Create and append the buttons
+            const quitButton = document.createElement('button');
+            quitButton.id = 'quitBtn'; // Apply button ID
+            quitButton.className = 'popup-btn'; // Apply a common class for styling
+            quitButton.innerText = 'Quit Game';
+            quitButton.onclick = quitGame; // Add the event listener for quit game action
+        
+            const changeCategoryButton = document.createElement('button');
+            changeCategoryButton.id = 'changeCategoryBtn'; // Apply button ID
+            changeCategoryButton.className = 'popup-btn'; // Apply a common class for styling
+            changeCategoryButton.innerText = 'Change Category';
+            changeCategoryButton.onclick = changeCategory; // Add event listener for change category action
+        
+            const replayButton = document.createElement('button');
+            replayButton.id = 'replayBtn'; // Apply button ID
+            replayButton.className = 'popup-btn'; // Apply a common class for styling
+            replayButton.innerText = 'Replay';
+            replayButton.onclick = replayGame; // Add event listener for replay action
+        
+            // Append the buttons to the popup content
+            popupContent.appendChild(quitButton);
+            popupContent.appendChild(changeCategoryButton);
+            popupContent.appendChild(replayButton);
+        
+            // Append the popup content to the popup
+            popup.appendChild(popupContent);
+        
+            // Append the popup to the body and make it visible
             document.body.appendChild(popup);
             popup.style.display = 'block';
         }
+        
 
         function quitGame() {
             window.location.href = 'howToplay.html'; // Change this to your home page or desired page

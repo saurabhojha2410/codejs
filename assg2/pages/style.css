@@ -114,6 +114,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 /* Heading Styling for Category Name */
@@ -175,7 +176,7 @@ body {
     background-color: #e9edf0;
     border: none;
     color: rgb(16, 16, 16);
-    border-radius: 30px;
+    border-radius: 15px;
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
@@ -225,16 +226,17 @@ body {
 }
 
 /* Popup Styling */
+/* Popup Styling */
 #gamePopup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8); /* Transparent dark background */
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent dark background */
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    display: none;
+    display: none; /* Default hidden, shown via JS */
     z-index: 1000;
     animation: popin 0.5s ease-out; /* Popping animation */
 }
@@ -243,28 +245,28 @@ body {
 .popup-content {
     text-align: center;
     color: white;
-}
-
-#popupMessage {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Gap between buttons */
 }
 
 /* Buttons inside the Popup */
 #replayBtn, #changeCategoryBtn, #quitBtn {
-    padding: 10px 20px;
-    margin: 10px;
-    background-color: #28a745;
+    padding: 12px 30px;
+    margin: 0; /* No margin for the buttons, only gap handled by flex */
+    background-color: #0056b3;
     border: none;
     color: white;
-    border-radius: 5px;
+    border-radius: 25px; /* Pill-shaped button */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    width: 100%; /* Ensure buttons take full width of container */
 }
 
+/* Button Hover Effects */
 #replayBtn:hover, #changeCategoryBtn:hover, #quitBtn:hover {
-    background-color: #218838;
-    transform: scale(1.1); /* Pop effect on hover */
+    background-color: #d93ad1;
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 /* Popup Animation */
@@ -278,3 +280,4 @@ body {
         opacity: 1;
     }
 }
+
