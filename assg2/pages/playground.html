@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="category-name"></h1>
+    <div id="word-blanks" class="blanks"></div>
+    <div id="keyboard" class="keyboard"></div>
+    <p id="message"></p>
+
+
+    <div id="gamePopup" class="popup hidden">
+        <div class="popup-content">
+            <h2 id="popupMessage"></h2>
+            <button id="replayBtn">Replay</button>
+            <button id="changeCategoryBtn">Change Category</button>
+            <button id="quitBtn">Quit Game</button>
+        </div>
+    </div>
+    <script src="data.js"></script> <!-- Place your categories here -->
+    <script src="script.js"></script> <!-- Game logic -->
+</body>
+</html>

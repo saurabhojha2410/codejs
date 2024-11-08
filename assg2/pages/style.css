@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Mouse+Memoirs&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    
+}
+a{
+    text-decoration: none;
+}
+.home-img{
+    height: 100%;
+    width: 100%;
+    background: url(../assest/background-tablet.svg) no-repeat;
+    background-size: cover;
+    background-position: 100% 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    box-shadow: -0.5px -0.5px 1px 4px #2463FF ;
+    padding: 4rem 6rem;
+    border-radius: 3rem;
+    background-color: #3155bf55;
+}
+.play-button{
+    width: 60px;
+    height: 60px;
+    background-color: #e87ebf;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0  4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.play-button:hover{
+    transform: scale(1.2);
+
+}
+.play-icon{
+    color: white;
+    font-size: 24px;
+}
+.how-to-play{
+    padding: 10px 20px;
+    background-color: #2463FF;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+
+}
+.how-to-play:hover{
+    transform: scale(1.2);
+}
+.category-container{
+    padding:4rem 0;
+    height: 100%;
+    background: linear-gradient(#140337,#110741 );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   font-weight: 500;
+    font-size: .9rem;
+    gap:3rem;
+
+}
+div.category-container h2{
+    font-size: 4rem;
+    color: white;
+}
+div.categories{
+    text-align: center;
+    display: grid;
+    row-gap: 1rem;
+    column-gap: 0.5rem;
+    grid-template-columns: repeat(3,200px);
+    color: white;
+}
+div.category{
+    padding: 1rem;
+    border-radius: 0.5rem; 
+    background-color: #2463FF;
+    text-transform: uppercase;
+
+}
+div.category:hover{
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Background Gradient */
+body {
+    background: linear-gradient(#140337, #110741);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: hidden;
+}
+
+/* Heading Styling for Category Name */
+#category-name {
+    text-align: left;
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: white;
+}
+
+/* Styling for the Word Blanks (Pill Badges) */
+/* Word Blanks Styling (Vertical Pill Shape) */
+#word-blanks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between each blank */
+    padding: 20px;
+    margin: 20px 0;
+    margin-top: 100px;
+}
+
+#word-blanks span {
+    display: inline-block;
+    width: 40px; /* Width of the pill */
+    height: 60px; /* Height of the pill */
+    background-color: #0e7da3; /* Light Blue background */
+    border-radius: 30px; /* Rounded pill shape */
+    text-align: center;
+    font-size: 2em; /* Larger font size */
+    line-height: 60px; /* Vertically center the text */
+    color: #333; /* Dark text color */
+    font-weight: bold;
+}
+
+/* To hide the blank spaces when no letter is guessed */
+#word-blanks span:empty {
+    background-color: #f0f0f0; /* Lighter background for empty spaces */
+}
+
+
+
+
+/* Styling for the Keyboard (Pill Badges) */
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.keyboard button {
+    padding: 10px 20px;
+    background-color: #e9edf0;
+    border: none;
+    color: rgb(16, 16, 16);
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.keyboard button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Slight pop effect on hover */
+}
+
+/* Disabled Key Styling - Set to gray background for all disabled buttons */
+.keyboard button:disabled {
+    background-color: #1d1a1a; /* Disabled button in gray */
+    color: #888;
+    cursor: not-allowed;
+}
+
+.keyboard button:disabled:hover {
+    background-color: #cccccc; /* Maintain gray even on hover */
+}
+
+/* Correct Guess Styling - Removed, will now be handled by the disabled styling */
+.keyboard button.correct {
+    background-color: #ccc; /* No specific correct button color */
+}
+
+.keyboard button.correct:hover {
+    background-color: #ccc; /* Maintain gray on hover */
+}
+
+/* Incorrect Guess Styling - Removed, will now be handled by the disabled styling */
+.keyboard button.incorrect {
+    background-color: #ccc; /* No specific incorrect button color */
+}
+
+.keyboard button.incorrect:hover {
+    background-color: #ccc; /* Maintain gray on hover */
+}
+
+
+/* Message Styling */
+#message {
+    text-align: center;
+    font-size: 1.2em;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Popup Styling */
+#gamePopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent dark background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1000;
+    animation: popin 0.5s ease-out; /* Popping animation */
+}
+
+/* Popup Content */
+.popup-content {
+    text-align: center;
+    color: white;
+}
+
+#popupMessage {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+/* Buttons inside the Popup */
+#replayBtn, #changeCategoryBtn, #quitBtn {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#replayBtn:hover, #changeCategoryBtn:hover, #quitBtn:hover {
+    background-color: #218838;
+    transform: scale(1.1); /* Pop effect on hover */
+}
+
+/* Popup Animation */
+@keyframes popin {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
